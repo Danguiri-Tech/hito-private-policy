@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Política de Privacidad — Hito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F5F2EC;
+      --surface: #FDFBF7;
+      --ink: #1A1814;
+      --ink-soft: #5A5650;
+      --ink-muted: #9A9590;
+      --accent: #2D5016;
+      --accent-light: #4A7A28;
+      --accent-pale: #EAF0E4;
+      --border: #E0DBD3;
+      --highlight: #C8D8B8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ─── HEADER ─────────────────────────────────── */
+    header {
+      background: var(--accent);
+      color: #fff;
+      padding: 64px 0 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, #4A7A28 0%, transparent 60%);
+      opacity: .5;
+    }
+    .header-inner {
+      position: relative;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: #d8eed0;
+    }
+    header h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    header h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: #d8eed0;
+    }
+    .header-meta {
+      font-size: 14px;
+      color: rgba(255,255,255,.65);
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .header-meta span::before { content: '· '; opacity: .5; }
+    .header-meta span:first-child::before { content: ''; }
+
+    /* ─── TOC ─────────────────────────────────────── */
+    .toc-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 8px rgba(0,0,0,.06);
+    }
+    .toc-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 32px;
+      overflow-x: auto;
+      display: flex;
+      gap: 0;
+      scrollbar-width: none;
+    }
+    .toc-inner::-webkit-scrollbar { display: none; }
+    .toc-inner a {
+      text-decoration: none;
+      color: var(--ink-soft);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 14px 16px;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+    .toc-inner a:hover {
+      color: var(--accent-light);
+      border-bottom-color: var(--accent-light);
+    }
+
+    /* ─── MAIN ────────────────────────────────────── */
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 60px 32px 100px;
+    }
+
+    /* ─── SECTION ─────────────────────────────────── */
+    section {
+      margin-bottom: 56px;
+      scroll-margin-top: 60px;
+    }
+
+    h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-pale);
+      color: var(--accent);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 28px 0 10px;
+    }
+
+    p { margin-bottom: 14px; color: var(--ink-soft); }
+    p:last-child { margin-bottom: 0; }
+
+    strong { color: var(--ink); font-weight: 500; }
+
+    a { color: var(--accent-light); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ─── CALLOUT ─────────────────────────────────── */
+    .callout {
+      background: var(--accent-pale);
+      border-left: 3px solid var(--accent-light);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 15px;
+      color: var(--ink-soft);
+    }
+    .callout strong { color: var(--accent); }
+
+    .callout-warning {
+      background: #FFF8E6;
+      border-left-color: #C48A00;
+    }
+    .callout-warning strong { color: #8A5E00; }
+
+    /* ─── LIST ────────────────────────────────────── */
+    ul, ol {
+      padding-left: 22px;
+      margin: 12px 0 16px;
+      color: var(--ink-soft);
+    }
+    li { margin-bottom: 6px; }
+    li::marker { color: var(--accent-light); }
+
+    /* ─── TABLE ───────────────────────────────────── */
+    .table-wrap { overflow-x: auto; margin: 20px 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+    }
+    th {
+      background: var(--accent);
+      color: #fff;
+      padding: 11px 16px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    td {
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink-soft);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: var(--surface); }
+
+    /* ─── RIGHTS GRID ─────────────────────────────── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .right-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .right-card:hover {
+      border-color: var(--accent-light);
+      box-shadow: 0 2px 12px rgba(45,80,22,.08);
+    }
+    .right-icon { font-size: 22px; margin-bottom: 8px; }
+    .right-title { font-weight: 600; color: var(--ink); font-size: 14.5px; margin-bottom: 4px; }
+    .right-desc { font-size: 13px; color: var(--ink-muted); line-height: 1.5; }
+
+    /* ─── FOOTER ──────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 36px 24px;
+      font-size: 13.5px;
+    }
+    footer strong { color: rgba(255,255,255,.85); }
+    footer a { color: var(--highlight); }
+
+    /* ─── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 600px) {
+      main { padding: 40px 20px 72px; }
+      .header-inner { padding: 0 20px; }
+      .toc-inner { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="app-badge">🏔 Aplicación Móvil · Android</div>
+    <h1>Política de <em>Privacidad</em><br>de Hito</h1>
+    <div class="header-meta">
+      <span>Desarrollador: Pablo Salgado</span>
+      <span>Última actualización: 31 de marzo de 2025</span>
+      <span>Alojada en GitHub Pages</span>
+    </div>
+  </div>
+</header>
+
+<!-- STICKY TOC -->
+<nav class="toc-bar" aria-label="Índice de secciones">
+  <div class="toc-inner">
+    <a href="#intro">Introducción</a>
+    <a href="#recoleccion">Datos que recogemos</a>
+    <a href="#terceros">Terceros</a>
+    <a href="#gdpr">GDPR</a>
+    <a href="#ccpa">CCPA / CPRA</a>
+    <a href="#caloppa">CalOPPA</a>
+    <a href="#menores">Menores</a>
+    <a href="#eliminacion">Eliminación</a>
+    <a href="#cambios">Cambios</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- 0 · INTRODUCCIÓN -->
+  <section id="intro">
+    <h2><span class="num">0</span> Introducción y ámbito de aplicación</h2>
+    <p>Bienvenido/a a <strong>Hito</strong> ("la App"), desarrollada por <strong>Pablo Salgado</strong> ("nosotros", "el Desarrollador"). Esta Política de Privacidad describe cómo se recopila, usa, almacena y protege la información personal de quienes utilizan la App en dispositivos Android.</p>
+    <p>Al descargar o usar la App, usted acepta las prácticas descritas en este documento. Si no está de acuerdo, le recomendamos no utilizar la App.</p>
+    <div class="callout">
+      <strong>Resumen rápido:</strong> Hito almacena su nombre de usuario y foto de perfil <em>únicamente en su dispositivo</em>. Los servicios de publicidad de Google pueden recopilar datos de uso de forma automática para mostrar anuncios personalizados. Usted tiene derechos sobre esos datos.
+    </div>
+    <p>Esta política está alojada permanentemente en <strong>GitHub Pages</strong> y puede accederse en cualquier momento desde el enlace indicado en la ficha de la App en Google Play.</p>
+  </section>
+
+  <!-- 1 · DATOS QUE RECOPILAMOS -->
+  <section id="recoleccion">
+    <h2><span class="num">1</span> Datos que recopilamos</h2>
+
+    <h3>1.1 Datos que usted proporciona directamente (opcionales)</h3>
+    <p>La App ofrece la posibilidad de personalizar su experiencia mediante los siguientes campos, todos ellos <strong>completamente opcionales</strong>:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Dato</th><th>Propósito</th><th>Dónde se almacena</th><th>¿Se comparte?</th></tr></thead>
+        <tbody>
+          <tr><td>Nombre o <em>username</em></td><td>Personalización visual de la interfaz</td><td>Solo en el dispositivo (almacenamiento local)</td><td>No</td></tr>
+          <tr><td>Fotografía de perfil</td><td>Personalización visual del avatar</td><td>Solo en el dispositivo (almacenamiento local)</td><td>No</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      Estos datos <strong>nunca se transmiten a servidores del Desarrollador</strong> ni a terceros. Permanecen en su dispositivo hasta que usted los elimine o desinstale la App.
+    </div>
+
+    <h3>1.2 Datos recopilados automáticamente por terceros</h3>
+    <p>Los servicios de Google integrados en la App recopilan ciertos datos de forma automática. Consulte la sección <a href="#terceros">§ 3 Servicios de terceros</a> para más detalles.</p>
+    <h3>Información Financiera:</h3>
+    <p>Nuestra aplicación permite al usuario registrar datos de ingresos, gastos y presupuestos. Es importante destacar que toda esta información se procesa y almacena exclusivamente de forma local en el dispositivo del usuario. El Desarrollador no tiene acceso a sus registros financieros, ni estos se sincronizan con servidores externos o bases de datos fuera de su control.</p>
+    <h3>
+      
+    Gestión de Archivos (CSV):
+    </h3>
+La aplicación incluye funciones para importar y exportar datos en formato CSV. Al utilizar estas funciones, la aplicación accede al almacenamiento de su dispositivo únicamente para leer o escribir los archivos seleccionados por el usuario. No recolectamos ni compartimos el contenido de estos archivos para fines distintos a la funcionalidad propia de la herramienta.
+    <h3>
+      
+    Publicidad de Terceros (Google AdMob):
+    </h3>
+Utilizamos Google AdMob para mostrar anuncios. AdMob recolecta identificadores de dispositivo (AAID) y datos de red para servir publicidad personalizada y prevenir el fraude. Para obtener más detalles sobre cómo Google utiliza los datos cuando usted usa esta aplicación, visite: https://policies.google.com/technologies/partner-sites.
+  </section>
+
+  <!-- 2 · BASE LEGAL -->
+  <section id="base-legal">
+    <h2><span class="num">2</span> Base legal del tratamiento</h2>
+    <p>Donde resulta aplicable el Reglamento General de Protección de Datos (RGPD / GDPR), el tratamiento de datos personales se sustenta en las siguientes bases legales:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tratamiento</th><th>Base legal (art. RGPD)</th></tr></thead>
+        <tbody>
+          <tr><td>Datos de perfil (nombre y foto, opcionales)</td><td>Art. 6.1.a — <strong>Consentimiento</strong> explícito del usuario al ingresarlos voluntariamente</td></tr>
+          <tr><td>Publicidad personalizada (AdMob)</td><td>Art. 6.1.a — <strong>Consentimiento</strong> (gestionado mediante el SDK de Consent de Google)</td></tr>
+          <tr><td>Análisis de uso (Firebase Analytics)</td><td>Art. 6.1.f — <strong>Interés legítimo</strong> del Desarrollador para mejorar la App</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3 · TERCEROS -->
+  <section id="terceros">
+    <h2><span class="num">3</span> Servicios de terceros y publicidad</h2>
+
+    <h3>3.1 Google AdMob (publicidad)</h3>
+    <p><strong>Google AdMob</strong> muestra anuncios dentro de la App. AdMob puede recopilar los siguientes datos para servir publicidad:</p>
+    <ul>
+      <li>Identificador de publicidad del dispositivo (Advertising ID)</li>
+      <li>Dirección IP (para geolocalización aproximada)</li>
+      <li>Información sobre el dispositivo (modelo, sistema operativo, idioma)</li>
+      <li>Datos de interacción con los anuncios (clics, impresiones)</li>
+    </ul>
+    <p>"Para entender cómo Google utiliza la información cuando usas nuestra App, puedes consultar este sitio: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></p>
+    <div class="callout callout-warning">
+      <strong>Publicidad basada en intereses y retargeting:</strong> La App utiliza AdMob para mostrar anuncios personalizados según los intereses del usuario y para campañas de retargeting. Si prefiere anuncios no personalizados, puede optar por no participar desde <strong>Ajustes del dispositivo → Google → Anuncios → Inhabilitar personalización de anuncios</strong>, o gestionarlo en el aviso de consentimiento que aparece al abrir la App por primera vez.
+    </div>
+    <p>Política de privacidad de Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+    <p>Opciones de publicidad de Google: <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a></p>
+
+    <h3>3.2 Google Analytics for Firebase (análisis)</h3>
+    <p><strong>Firebase Analytics</strong> recopila datos de uso de forma pseudónima para ayudar al Desarrollador a comprender cómo se utiliza la App:</p>
+    <ul>
+      <li>Eventos de uso (pantallas visitadas, funciones activadas)</li>
+      <li>Información del dispositivo y sistema operativo</li>
+      <li>País/región (aproximado)</li>
+      <li>Datos de rendimiento de la aplicación</li>
+    </ul>
+    <p>Los datos son procesados y almacenados por Google LLC. Para más información: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></p>
+    <p>Puede desactivar la recopilación de datos de Firebase Analytics en <strong>Ajustes del dispositivo → Google → Uso y diagnóstico</strong>.</p>
+
+    <h3>3.3 No vendemos datos personales</h3>
+    <p>El Desarrollador <strong>no vende, alquila ni transfiere</strong> datos personales a terceros para fines propios más allá de los servicios de Google descritos anteriormente.</p>
+  </section>
+
+  <!-- 4 · GDPR -->
+  <section id="gdpr">
+    <h2><span class="num">4</span> Derechos bajo el RGPD (Unión Europea)</h2>
+    <p>Si usted reside en el Espacio Económico Europeo (EEE), el Reglamento (UE) 2016/679 le otorga los siguientes derechos sobre sus datos personales:</p>
+
+    <div class="rights-grid">
+      <div class="right-card">
+        <div class="right-icon">👁️</div>
+        <div class="right-title">Acceso</div>
+        <div class="right-desc">Solicitar una copia de los datos personales que tenemos sobre usted.</div>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">✏️</div>
+        <div class="right-title">Rectificación</div>
+        <div class="right-desc">Corregir datos inexactos o incompletos que le conciernan.</div>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">🗑️</div>
+        <div class="right-title">Supresión</div>
+        <div class="right-desc">Solicitar la eliminación de sus datos ("derecho al olvido").</div>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">⏸️</div>
+        <div class="right-title">Limitación</div>
+        <div class="right-desc">Restringir el tratamiento de sus datos en determinadas circunstancias.</div>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">📦</div>
+        <div class="right-title">Portabilidad</div>
+        <div class="right-desc">Recibir sus datos en formato estructurado y legible por máquina.</div>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">🚫</div>
+        <div class="right-title">Oposición</div>
+        <div class="right-desc">Oponerse al tratamiento basado en interés legítimo o con fines de marketing.</div>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">↩️</div>
+        <div class="right-title">Retirada de consentimiento</div>
+        <div class="right-desc">Retirar el consentimiento en cualquier momento sin efecto retroactivo.</div>
+      </div>
+      <div class="right-card">
+        <div class="right-icon">⚖️</div>
+        <div class="right-title">Reclamación</div>
+        <div class="right-desc">Presentar una reclamación ante su autoridad de protección de datos local.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Cómo ejercer sus derechos:</strong> Puede ejercer estos derechos enviando un correo a <a href="mailto:pablosalgadou@gmail.com">pablosalgadou@gmail.com</a>. Responderemos en un plazo máximo de <strong>30 días</strong> desde la recepción de su solicitud.
+    </div>
+    <p>Para datos almacenados localmente (nombre/foto), el ejercicio de estos derechos se realiza directamente desde la propia App o desinstalándola. Para datos tratados por Google, consulte las opciones de privacidad de Google indicadas en la sección anterior.</p>
+  </section>
+
+  <!-- 5 · CCPA -->
+  <section id="ccpa">
+    <h2><span class="num">5</span> Derechos bajo la CCPA / CPRA (California, EE. UU.)</h2>
+    <p>Si usted es residente del estado de California (EE. UU.), la <em>California Consumer Privacy Act</em> (CCPA), modificada por la <em>California Privacy Rights Act</em> (CPRA), le otorga los siguientes derechos adicionales:</p>
+
+    <h3>5.1 Derecho a saber</h3>
+    <p>Tiene derecho a solicitar información sobre las categorías y los datos personales específicos que hemos recopilado sobre usted, así como los fines para los que se utilizan.</p>
+
+    <h3>5.2 Derecho a eliminar</h3>
+<p>El usuario tiene el control total sobre su información. Para eliminar permanentemente su nombre, foto de perfil y todos los datos financieros registrados, puede:
+Utilizar la función de "Borrar Datos" dentro de los ajustes de la aplicación.
+Desinstalar la aplicación del dispositivo (esto borrará automáticamente toda la base de datos local).
+Para solicitudes relacionadas con datos de analítica (Firebase) o publicidad (AdMob), puede contactarnos en pablosalgadou@gmail.com.</p>
+
+    <h3>5.3 Derecho a corregir</h3>
+    <p>Tiene derecho a solicitar la corrección de información personal inexacta que tengamos sobre usted.</p>
+
+    <h3>5.4 Derecho a no discriminación</h3>
+    <p>No recibirá un trato discriminatorio por ejercer ninguno de los derechos previstos en la CCPA/CPRA.</p>
+
+    <h3>5.5 Do Not Sell or Share My Personal Information</h3>
+    <div class="callout callout-warning">
+      <strong>⚠️ Declaración CCPA:</strong> El Desarrollador <strong>no vende</strong> información personal tal como se define en la CCPA. Sin embargo, el uso de Google AdMob con publicidad basada en intereses y retargeting puede constituir una "compartición" de datos personales para publicidad entre contextos (<em>cross-context behavioral advertising</em>) conforme a la CPRA. Usted puede ejercer su derecho a <strong>optar por no participar ("Opt-Out")</strong> de la siguiente manera:
+      <ul style="margin-top:10px;">
+        <li>Desactivando la personalización de anuncios en <strong>Ajustes del dispositivo → Google → Anuncios</strong>.</li>
+        <li>Enviando su solicitud de exclusión a <a href="mailto:pablosalgadou@gmail.com">pablosalgadou@gmail.com</a>.</li>
+      </ul>
+    </div>
+
+    <h3>5.6 Cómo ejercer sus derechos CCPA</h3>
+    <p>Envíe su solicitud verificable a <a href="mailto:pablosalgadou@gmail.com">pablosalgadou@gmail.com</a>. Responderemos dentro de los <strong>45 días</strong> establecidos por la ley, con posibilidad de una prórroga de 45 días adicionales si fuera necesario.</p>
+  </section>
+
+  <!-- 6 · CalOPPA -->
+  <section id="caloppa">
+    <h2><span class="num">6</span> CalOPPA — Do Not Track (DNT)</h2>
+    <p>De conformidad con la <em>California Online Privacy Protection Act</em> (CalOPPA), realizamos la siguiente declaración sobre las señales de "<strong>Do Not Track</strong>" (No rastrear):</p>
+    <div class="callout callout-warning">
+      <strong>Declaración DNT:</strong> Actualmente, la App <strong>no responde</strong> a las señales de "Do Not Track" emitidas por navegadores u otros mecanismos, ya que no existe un estándar universal acordado para su interpretación en aplicaciones móviles. No obstante, usted puede limitar el seguimiento con fines publicitarios utilizando las opciones de privacidad de Google descritas en la sección § 3.
+    </div>
+    <p>Nos comprometemos a revisar esta posición cuando un estándar técnico reconocido esté disponible para aplicaciones móviles Android.</p>
+  </section>
+
+  <!-- 7 · MENORES -->
+  <section id="menores">
+    <h2><span class="num">7</span> Privacidad de menores de edad</h2>
+    <p><strong>Hito no está dirigida a personas menores de 13 años</strong>, ni a menores de 16 años en el contexto del RGPD europeo.</p>
+    <p>No recopilamos de forma consciente información personal de niños. Si tiene motivos para creer que un menor de 13 años ha proporcionado datos personales a través de la App, le rogamos que se ponga en contacto con nosotros en <a href="mailto:pablosalgadou@gmail.com">pablosalgadou@gmail.com</a> para que podamos tomar las medidas oportunas.</p>
+    <p>Si usted es padre, madre o tutor legal y detecta este supuesto, proceda a desinstalar la App del dispositivo del menor, lo cual eliminará todos los datos almacenados localmente.</p>
+  </section>
+
+  <!-- 8 · ELIMINACIÓN DE DATOS -->
+  <section id="eliminacion">
+    <h2><span class="num">8</span> Cómo eliminar sus datos</h2>
+    <p>Dado que los datos de perfil (nombre y foto) se almacenan exclusivamente en su dispositivo, usted tiene control total sobre ellos:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Método</th><th>Qué elimina</th><th>Inmediato</th></tr></thead>
+        <tbody>
+          <tr><td>Borrar nombre/foto desde los ajustes de la App</td><td>Solo los datos de perfil</td><td>✅ Sí</td></tr>
+          <tr><td>Desinstalar la App del dispositivo</td><td>Todos los datos locales de Hito</td><td>✅ Sí</td></tr>
+          <tr><td>Enviar solicitud de eliminación por correo electrónico</td><td>Cualquier dato bajo nuestro control</td><td>⏱ Hasta 30 días</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Para los datos recopilados por Google (AdMob / Firebase), consulte el <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Panel de privacidad de Google</a>.</p>
+  </section>
+
+  <!-- 9 · SEGURIDAD -->
+  <section id="seguridad">
+    <h2><span class="num">9</span> Seguridad de los datos</h2>
+    <p>Los datos almacenados localmente en su dispositivo están protegidos por los mecanismos de seguridad propios del sistema operativo Android (cifrado de almacenamiento, aislamiento de aplicaciones). El Desarrollador no tiene acceso remoto a dichos datos.</p>
+    <p>Para los datos tratados por Google, Google LLC aplica medidas de seguridad técnicas y organizativas de nivel empresarial. Si bien ningún sistema es completamente infalible, Google cumple con certificaciones internacionales de seguridad (ISO 27001, SOC 2, etc.).</p>
+  </section>
+
+  <!-- 10 · CAMBIOS -->
+  <section id="cambios">
+    <h2><span class="num">10</span> Cambios en esta Política</h2>
+    <p>Nos reservamos el derecho de actualizar esta Política de Privacidad en cualquier momento. Cuando realicemos cambios materiales, actualizaremos la fecha de "Última actualización" en la parte superior de este documento y, cuando sea posible, notificaremos a los usuarios a través de un aviso dentro de la App.</p>
+    <p>Le recomendamos revisar esta página periódicamente. El uso continuado de la App tras la publicación de cambios implica su aceptación de la nueva versión.</p>
+    <p>El historial de versiones de esta política puede consultarse en el repositorio de GitHub donde está alojada.</p>
+  </section>
+
+  <!-- 11 · CONTACTO -->
+  <section id="contacto">
+    <h2><span class="num">11</span> Contacto y responsable del tratamiento</h2>
+    <div class="callout">
+      <strong>Responsable del tratamiento:</strong><br>
+      Pablo Salgado<br>
+      Desarrollador independiente — App Hito<br>
+      📧 <a href="mailto:pablosalgadou@gmail.com">pablosalgadou@gmail.com</a>
+    </div>
+    <p>Para cualquier consulta relacionada con esta Política de Privacidad, el ejercicio de sus derechos o cualquier cuestión relativa a la protección de sus datos, no dude en contactarnos a través del correo electrónico indicado. Haremos todo lo posible por responderle en un plazo de <strong>30 días hábiles</strong>.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>Hito</strong> · Política de Privacidad</p>
+  <p style="margin-top:6px;">© 2025 Pablo Salgado. Alojado en <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>.</p>
+  <p style="margin-top:6px; font-size:12px;">Esta política cumple con el RGPD (UE 2016/679), la CCPA/CPRA (California) y la CalOPPA.</p>
+</footer>
+
+</body>
+</html>
